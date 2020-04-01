@@ -187,6 +187,9 @@
         },
 
         watch: {
+            colors() {
+                this.updateDebounced()
+            },
             labels() {
                 this.updateDebounced()
             },
@@ -266,6 +269,7 @@
             },
             update () {
                 const data = {
+                    colors: this.colors,
                     labels: this.labels,
                     datasets: this.dataSets,
                     yMarkers: this.yMarkers,
